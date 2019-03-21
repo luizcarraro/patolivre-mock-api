@@ -23,7 +23,7 @@ module.exports = function destroyOneRecord( req, res ) {
 
   var Model = actionUtil.parseModel( req );
   var pk = actionUtil.requirePk( req );
-  let criteria = req.query || {};
+  var criteria = req.query || {};
 
   var query = Model.findOne( pk ).where( criteria );
   query = actionUtil.populateEach( query, req );
